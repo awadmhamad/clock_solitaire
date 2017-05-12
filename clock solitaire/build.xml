@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="clock solitaire" default="compile" basedir=".">
+	<property name="initText" value="starting building clock solitaire project..."/>
+	<property name="dep_basedir" value="C:\Users\muhammad\.p2\pool\plugins"/>
+	<property name="webDir" location="./webPages"/>
+
+	<target name="init">
+		<echo> ${initText} </echo>
+		<delete dir="dst"/>
+		<mkdir dir="dst"/>
+		<delete dir="webTarget"/>
+		<mkdir dir="webTarget"/>
+	</target>
+	<target name="compile" depends="init">
+		<javac srcdir="src"
+         destdir="dst"
+         classpath="jarfile"
+         debug="on"
+		/>
+	<javac srcdir="tests" destdir="dst" classpath="jarfile" debug="on">
+		<classpath>
+			<fileset dir="${dep_basedir}" includes="**/*.jar"/>
+		</classpath>
+	</javac>
+	<war destfile="webTarget/webApp.war" needxmlfile='false'>
+		<classes dir="${webDir}"/>
+		<fileset dir="${webDir}"></fileset>
+	</war>
+	</target>
+</project>
