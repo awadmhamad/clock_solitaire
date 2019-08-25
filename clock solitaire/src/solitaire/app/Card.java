@@ -17,6 +17,7 @@ public class Card {
 	public Card(int value,SUIT suit){
 		this.value=value;
 		this.suit=suit;
+		System.out.println("Picking a new Card!");
 	}
 	
 	public int getValue(){
