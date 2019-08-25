@@ -6,7 +6,7 @@ public class Card {
 		S,H,D,C;
 	}
 	
-	protected static final int A=14;
+	protected static final int A=25;
 	protected static final int J=11;
 	protected static final int Q=12;
 	protected static final int K=13;
